@@ -43,6 +43,63 @@ OUTPUT
 > * 1 imported box of chocolates: 11.85 Sales Taxes: 6.70
 Total: 74.68
 
+# Tools
+* Kotlin 1.7.10
+* Testing: JUnit 5
+* Gradle
+
+# How to run (test) this example?
+According to the challenge it allows to create and use hard coded data e.g providing those in a unit test
+To fully test the inputs and outputs cases, you should run:
+>PaymentCounterTest.kt
+
+***NOTE There are 3 test cases which test every input and output from the challenge.***
+
+# Software Design
+
+Following OOP pillars and Clean Code practices.
+
+Design patterns used:
+* Abstract Factory
+* Strategy Pattern
+
+***Abstract Factory***
+
+The usage of this pattern points to Product where Product is an abstract class and every other Product such as: Book, Food, Medicine and Other inherit from Product class.
+
+| Advantages                                                                                        | Disadvantages                                                                                  |
+|---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| You can easily extend any new products in the future as you don’t need to change the client code. | 1. The code may become way too complicated if there are multiple requests to add new products. |
+| Avoiding tight coupling between concrete products and client code.                                |                                                                                                |
+| Single Responsibility Principle by extracting the production code in one place.                   |                                                                                                |
+| Open/Closed Principle where you can add new strategies without changing the context               |                                                                                                |
+
+***Strategy Pattern***
+
+The usage of this pattern points to TaxCalculation as each product might have different taxes and features. By using Strategy Pattern we handle each category.
+
+| Advantages                                                                           | Disadvantages                                                   |
+|--------------------------------------------------------------------------------------|-----------------------------------------------------------------|
+| You can swap different logic inside an object at runtime.                            | 1. Defining strategies might be a bit risky on the client side. |
+| Isolating the implementation details from the code that uses it.                     |                                                                 |
+| Open/Closed Principle where you can add new strategies without changing the context. |                                                                 |
+
+# Using Test-driven Development practices
+
+Testing in this example includes different parts, different business logics.
+> ProductTest.kt - tests main functions of Product class
+> 
+> PaymentCounterTest.kt - tests 3 cases from inputs
+> 
+> TaxServiceFactoryTest - tests the strategy
+> 
+> TaxServiceTest - tests tax calculations
+> 
+> RoundingOperationTest - tests rounding operations
+> 
+Tests are written following the best practices on TDD. A motivational example is Guided by Zombies using TDD
+* Reference:
+http://blog.wingman-sw.com/tdd-guided-by-zombies
 
 
 
