@@ -1,0 +1,4 @@
+package receipt
+
+class PaymentCounter {
+}
