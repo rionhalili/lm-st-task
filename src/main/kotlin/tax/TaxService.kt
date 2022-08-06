@@ -1,0 +1,4 @@
+package tax
+
+interface TaxService {
+}
