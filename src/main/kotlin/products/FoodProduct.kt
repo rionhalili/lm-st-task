@@ -1,0 +1,4 @@
+package products
+
+class FoodProduct {
+}
