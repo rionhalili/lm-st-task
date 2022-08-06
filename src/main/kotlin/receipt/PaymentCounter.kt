@@ -5,6 +5,7 @@ import tax.TaxServiceFactory
 
 class PaymentCounter(
     private var receiptCalculator: ReceiptCalculator,
+    private var receipt: Receipt,
     private var products: List<Product>,
     private val country: String
 ){
@@ -22,7 +23,8 @@ class PaymentCounter(
     fun getReceipt(): Receipt {
         val totalTax = receiptCalculator.calculateTotalTaxOfProducts(products)
         val totalAmount = receiptCalculator.calculateTotalAmount(products)
-        return receiptCalculator.createNewReceipt(products, totalTax, totalAmount)
+        receipt = receiptCalculator.createNewReceipt(products, totalTax, totalAmount)
+        return receipt
     }
 
     private fun calculateReceiptBasedOnStrategy(strategy: String): ReceiptCalculator {

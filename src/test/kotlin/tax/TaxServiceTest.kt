@@ -18,6 +18,6 @@ internal class TaxServiceTest {
         val taxService = TaxServiceImpl()
         val taxCalculationTotal = taxService.calculateTax(1.0, 0.20, true)
 
-        assertThat(taxCalculationTotal).isEqualTo(0.71)
+        assertThat(taxCalculationTotal).isEqualTo(0.25)
     }
 }

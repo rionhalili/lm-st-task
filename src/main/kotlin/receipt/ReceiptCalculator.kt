@@ -33,7 +33,7 @@ class ReceiptCalculator(
             totalAmount += product.taxedCost
         }
 
-        return RoundingOperation.roundedValue(totalAmount)
+        return totalAmount
     }
 
     fun createNewReceipt(products: List<Product>, totalTax: Double, totalAmount: Double): Receipt {
