@@ -111,9 +111,9 @@ Testing in this example includes different parts, different business logics.
 ```
 ProductTest.kt - tests main functions of Product class
 PaymentCounterTest.kt - tests 3 cases from inputs
-TaxServiceFactoryTest - tests the strategy decision
-TaxServiceTest - tests tax calculations
-RoundingOperationTest - tests rounding operations
+TaxServiceFactoryTest.kt - tests the strategy decision
+TaxServiceTest.kt - tests tax calculations
+RoundingOperationTest.kt - tests rounding operations
 ```
 Tests are written following the best practices on TDD. A motivational example is Guided by Zombies using TDD
 * Reference:
