@@ -83,6 +83,10 @@ The usage of this pattern points to Product where Product is an abstract class a
 | Single Responsibility Principle by extracting the production code in one place.                   |                                                                                             |
 | Open/Closed Principle where you can add new strategies without changing the context               |                                                                                             |
 
+
+![My Image](./AbstractFactoryPreview.png)
+
+
 ***Strategy Pattern***
 
 The usage of this pattern points to TaxCalculation as each product might have different taxes and features. By using Strategy Pattern we handle each category.
@@ -92,6 +96,9 @@ The usage of this pattern points to TaxCalculation as each product might have di
 | You can swap different logic inside an object at runtime.                            | Defining strategies might be a bit risky on the client side. |
 | Isolating the implementation details from the code that uses it.                     |                                                              |
 | Open/Closed Principle where you can add new strategies without changing the context. |                                                              |
+
+
+![My Image](./StrategyPatternPreview.png)
 
 # Using Test-Driven Development practices
 
