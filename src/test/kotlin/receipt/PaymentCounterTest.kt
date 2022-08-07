@@ -43,20 +43,19 @@ internal class PaymentCounterTest {
         )
 
         val receiptCalculator = ReceiptCalculator(taxService)
-        val receipt1 = Receipt(products, 0.0, 0.0)
-        val paymentCounter = PaymentCounter(receiptCalculator, receipt1, products, "Local")
+        val paymentCounter = PaymentCounter(receiptCalculator, Receipt(), products, "Local")
 
         val shoppingCart = ShoppingCart(products)
         paymentCounter.billItems(shoppingCart)
 
-        val receipt = paymentCounter.getReceipt()
+        val paymentCounterReceipt = paymentCounter.getReceipt()
 
         assertSoftly { softly ->
-            softly.assertThat(receipt.products.size).isEqualTo(3)
-            softly.assertThat(receipt.salesTaxes).isEqualTo(1.5)
-            softly.assertThat(receipt.total).isEqualTo(29.85)
+            softly.assertThat(paymentCounterReceipt.products.size).isEqualTo(3)
+            softly.assertThat(paymentCounterReceipt.salesTaxes).isEqualTo(1.5)
+            softly.assertThat(paymentCounterReceipt.total).isEqualTo(29.85)
 
-            softly.assertThat(receipt.toString())
+            softly.assertThat(paymentCounterReceipt.toString())
                 .isEqualToIgnoringWhitespace(
                     "\n\n" +
                             "===============================\n" +
@@ -95,20 +94,19 @@ internal class PaymentCounterTest {
         )
 
         val receiptCalculator = ReceiptCalculator(taxService)
-        val receipt1 = Receipt(products, 0.0, 0.0)
-        val paymentCounter = PaymentCounter(receiptCalculator, receipt1, products, "Local")
+        val paymentCounter = PaymentCounter(receiptCalculator, Receipt(), products, "Local")
 
         val shoppingCart = ShoppingCart(products)
         paymentCounter.billItems(shoppingCart)
 
-        val receipt = paymentCounter.getReceipt()
+        val paymentCounterReceipt = paymentCounter.getReceipt()
 
         assertSoftly { softly ->
-            softly.assertThat(receipt.products.size).isEqualTo(2)
-            softly.assertThat(receipt.salesTaxes).isEqualTo(7.65)
-            softly.assertThat(receipt.total).isEqualTo(65.15)
+            softly.assertThat(paymentCounterReceipt.products.size).isEqualTo(2)
+            softly.assertThat(paymentCounterReceipt.salesTaxes).isEqualTo(7.65)
+            softly.assertThat(paymentCounterReceipt.total).isEqualTo(65.15)
 
-            softly.assertThat(receipt.toString())
+            softly.assertThat(paymentCounterReceipt.toString())
                 .isEqualToIgnoringWhitespace(
                     "\n\n" +
                             "===============================\n" +
@@ -160,20 +158,19 @@ internal class PaymentCounterTest {
         )
 
         val receiptCalculator = ReceiptCalculator(taxService)
-        val receipt1 = Receipt(products, 0.0, 0.0)
-        val paymentCounter = PaymentCounter(receiptCalculator, receipt1, products, "Local")
+        val paymentCounter = PaymentCounter(receiptCalculator, Receipt(), products, "Local")
 
         val shoppingCart = ShoppingCart(products)
         paymentCounter.billItems(shoppingCart)
 
-        val receipt = paymentCounter.getReceipt()
+        val paymentCounterReceipt = paymentCounter.getReceipt()
 
         assertSoftly { softly ->
-            softly.assertThat(receipt.products.size).isEqualTo(4)
-            softly.assertThat(receipt.salesTaxes).isEqualTo(6.65)
-            softly.assertThat(receipt.total).isEqualTo(74.65)
+            softly.assertThat(paymentCounterReceipt.products.size).isEqualTo(4)
+            softly.assertThat(paymentCounterReceipt.salesTaxes).isEqualTo(6.65)
+            softly.assertThat(paymentCounterReceipt.total).isEqualTo(74.65)
 
-            softly.assertThat(receipt.toString())
+            softly.assertThat(paymentCounterReceipt.toString())
                 .isEqualToIgnoringWhitespace(
                     "\n\n" +
                             "===============================\n" +

@@ -3,9 +3,9 @@ package receipt
 import products.Product
 
 data class Receipt(
-    val products: List<Product>,
-    val salesTaxes: Double,
-    val total: Double
+    val products: List<Product> = listOf(),
+    val salesTaxes: Double = 0.0,
+    val total: Double = 0.0
 ) {
 
     override fun toString(): String {
