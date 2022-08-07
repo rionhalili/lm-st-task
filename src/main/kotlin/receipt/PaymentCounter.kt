@@ -4,19 +4,19 @@ import products.Product
 import tax.TaxServiceFactory
 
 class PaymentCounter(
-    private var receiptCalculator: ReceiptCalculator,
+    private var receiptCalculator: ReceiptCalculatorServiceImpl,
     private var receipt: Receipt,
     private var products: List<Product>,
-    private val country: String
+    private val strategy: String
 ){
     fun billItems(shoppingCart: ShoppingCart) {
         products = shoppingCart.products
 
-        products.forEach { product: Product ->
-            receiptCalculator = calculateReceiptBasedOnStrategy(country)
-            val productTax = receiptCalculator.calculateTax(product.price, product.getTaxValue(country), product.imported)
-            val taxedCost = receiptCalculator.calculateTotalProductPriceWithTax(product.price, productTax)
-            product.taxedCost = taxedCost
+        products.forEach {
+            receiptCalculator = calculateReceiptBasedOnStrategy(strategy)
+            val productTax = receiptCalculator.calculateTax(it.price, it.getTaxValue(strategy), it.imported)
+            val taxedCost = receiptCalculator.calculateTotalProductPriceWithTax(it.price, productTax)
+            it.taxedCost = taxedCost
         }
     }
 
@@ -27,9 +27,9 @@ class PaymentCounter(
         return receipt
     }
 
-    private fun calculateReceiptBasedOnStrategy(strategy: String): ReceiptCalculator {
+    private fun calculateReceiptBasedOnStrategy(strategy: String): ReceiptCalculatorServiceImpl {
         val factory = TaxServiceFactory()
-        val taxCal = factory.getTaxService(strategy)
-        return ReceiptCalculator(taxCal!!)
+        val taxService = factory.getTaxService(strategy)
+        return ReceiptCalculatorServiceImpl(taxService!!)
     }
 }

@@ -42,7 +42,7 @@ internal class PaymentCounterTest {
             )
         )
 
-        val receiptCalculator = ReceiptCalculator(taxService)
+        val receiptCalculator = ReceiptCalculatorServiceImpl(taxService)
         val paymentCounter = PaymentCounter(receiptCalculator, Receipt(), products, "Local")
 
         val shoppingCart = ShoppingCart(products)
@@ -93,7 +93,7 @@ internal class PaymentCounterTest {
             ),
         )
 
-        val receiptCalculator = ReceiptCalculator(taxService)
+        val receiptCalculator = ReceiptCalculatorServiceImpl(taxService)
         val paymentCounter = PaymentCounter(receiptCalculator, Receipt(), products, "Local")
 
         val shoppingCart = ShoppingCart(products)
@@ -157,7 +157,7 @@ internal class PaymentCounterTest {
             )
         )
 
-        val receiptCalculator = ReceiptCalculator(taxService)
+        val receiptCalculator = ReceiptCalculatorServiceImpl(taxService)
         val paymentCounter = PaymentCounter(receiptCalculator, Receipt(), products, "Local")
 
         val shoppingCart = ShoppingCart(products)
