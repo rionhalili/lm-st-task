@@ -50,13 +50,13 @@ Total: 74.68
 ```
 
 # Tools
-* IntelliJ
+* IntelliJ IDEA 2022.2
 * Kotlin 1.7.10
-* Testing: JUnit 5
+* Test framework: JUnit 5
 * Gradle
 
 # How to run (test) this example?
-Implementation is done through testing. According to the challenge it allows to create and use hard coded data e.g
+Implementation is done through testing. According to the challenge it allows to create and use hard coded data e.g.
 providing those in a unit test to fully test the inputs and outputs cases, you should run:
 ```
 PaymentCounterTest.kt
@@ -76,6 +76,10 @@ Design patterns used:
 
 The usage of this pattern points to Product where Product is an abstract class and every other Product such as: Book, Food, Medicine and Other inherit from Product class.
 
+***Abstract Factory Preview***
+
+![My Image](./AbstractFactoryPreview.png)
+
 | Advantages                                                                                        | Disadvantages                                                                               |
 |---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | You can easily extend any new products in the future as you don’t need to change the client code. | The code may become way too complicated if there are multiple requests to add new products. |
@@ -84,12 +88,14 @@ The usage of this pattern points to Product where Product is an abstract class a
 | Open/Closed Principle where you can add new strategies without changing the context               |                                                                                             |
 
 
-![My Image](./AbstractFactoryPreview.png)
-
-
 ***Strategy Pattern***
 
 The usage of this pattern points to TaxCalculation as each product might have different taxes and features. By using Strategy Pattern we handle each category.
+
+***Strategy pattern preview***
+
+
+![My Image](./StrategyPatternPreview.png)
 
 | Advantages                                                                           | Disadvantages                                                |
 |--------------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -98,7 +104,6 @@ The usage of this pattern points to TaxCalculation as each product might have di
 | Open/Closed Principle where you can add new strategies without changing the context. |                                                              |
 
 
-![My Image](./StrategyPatternPreview.png)
 
 # Using Test-Driven Development practices
 
